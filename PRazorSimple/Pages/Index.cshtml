@@ -1,0 +1,35 @@
+﻿@page
+@model PRazorSimple.Pages.IndexModel
+@{
+    ViewData["Title"] = "Razor Index page";
+    ViewData["jNum"] = 22;
+    Layout = "_LayoutRazor.cshtml";
+}
+
+<!--
+    @@page says it is Asp.net core Razor pages and not MVC or other pages.
+    Now [model] is the class name that can be used here in Html, which is
+    an instance (entity) of the [public class IndexModel : PageModel] class
+    defined in the .cs file (Code behind)
+-->
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <img src="~/Images/HTML_logo_06.png" border="0">
+    <img src="~/Images/Razor_logo_06.png" border="0">
+</p>
+
+
+<p>
+    Razor is an ASP.NET programming syntax used to create dynamic web pages with the programming languages.
+    Razor Pages makes use of the C# language for server-side programming, and the Razor templating syntax for
+    embedding C# in HTML mark-up to generate content for browsers dynamically.
+</p>
+<p>
+    This project ASP.NET demonstrates how to create web pages using the "Razor Pages" framework.<br />
+</p>
+
+
+
+

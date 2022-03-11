@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link REL="stylesheet" HREF="~/estyl.css" TYPE="text/css">
+    <title>@ViewBag.Title</title>
+</head>
+<body style="background-color:#fef9e8" >
+
+    <div class="divGreen">[_LayoutRazor.cshtml] Title: @ViewBag.Title</div>
+    <div class="divGreen">Header of template [_LayoutRazor.cshtml] page</div>
+
+    <div style="padding: 10px;">
+
+        <table border="0" cellpadding="10" cellspacing="4">
+            <tr>
+                <td id="tabela" width="140px">
+                    Menu from template <br /><br />
+
+                    <p id="linkb"><a href="/Index">Home</a></p>
+                    <p id="linkb"><a href="/LayoutInfo">Layout pattern</a></p>
+                    <p id="linkb"><a href="/LayoutUse">Use Layout</a></p>
+                    <p id="linkb"><a href="/Variables">Variables</a></p>
+
+                    <p id="linkb"><a href="/About">About</a></p>
+                    <!-- <p id="linkb">Without link</p> -->
+                </td>
+                <td class="divRBody">
+                    <div >Page from RenderBody()</div>
+                    @RenderBody()
+                </td>
+            </tr>
+        </table>
+
+    </div>
+
+    <div class="divGreen">Footer of template [_LayoutRazor.cshtml] page</div>
+
+</body>
+</html>

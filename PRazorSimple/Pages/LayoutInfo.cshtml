@@ -1,0 +1,25 @@
+﻿@page
+@model PRazorSimple.Pages.LayoutInfoModel
+@{
+    ViewData["Title"] = "Layout in ASP.NET Core";
+    Layout = "_LayoutRazor.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    Most web apps have a common layout that provides the user with a consistent experience
+    as they navigate from page to page. The layout typically includes common user interface
+    elements such as the app header, navigation or menu elements, and footer.
+    Layouts reduce duplicate code in views.
+</p>
+
+<p>
+    <img src="~/Images/page_layout.png" border="0">
+</p>
+
+<p>
+    This ASP.NET project demonstrates how to create web pages using this layout pattern.
+    The file '_LayoutRazor.cshtml' here defines all web pages, which ensures the same page structure.
+</p>
+

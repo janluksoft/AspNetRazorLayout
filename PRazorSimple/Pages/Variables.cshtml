@@ -1,0 +1,93 @@
+﻿@page
+@model PRazorSimple.Pages.VariablesModel
+
+@{
+    ViewData["Title"] = "Table of variables";
+    ViewData["jNum"] = 22;
+    Layout = "_LayoutRazor.cshtml";
+}
+
+<!--
+    @@page says it is Asp.net core Razor pages and not MVC or other pages.
+    Now [model] is the class name that can be used here in Html, which is 
+    an instance (entity) of the [public class IndexModel : PageModel] class 
+    defined in the .cs file (Code behind)    
+-->
+
+<h1>@ViewData["Title"]</h1>
+
+<h2>@Model.sBoxInfo</h2>
+
+<div>
+    @{
+        var routeUrl = Url.RouteUrl(ViewContext.RouteData.Values);
+        var qsPath = ViewContext.HttpContext.Request.QueryString.Value;
+        var returnUrl = $"{routeUrl}{qsPath}";
+    }
+
+    <p>
+        My variable: <br />
+        <div style="border: 1px solid #D0D0D0">
+            <table border="0" cellpadding="10" cellspacing="4" id="tablecell">
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>sBoxInfo</td>
+                    <td>@Model.sBoxInfo</td>
+                </tr>
+                <tr>
+                    <td>iNum</td>
+                    <td>@Model.iNum</td>
+                </tr>
+                <tr>
+                    <td>Url</td>
+                    <td>@Url</td>
+                </tr>
+                <tr>
+                    <td>ViewData[Title]</td>
+                    <td>@ViewData["Title"]</td>
+                </tr>
+                <tr>
+                    <td>ViewData[jNum]</td>
+                    <td>@ViewData["jNum"]</td>
+                </tr>
+                <tr><td>routeUrl </td> <td>@routeUrl</td> </tr>
+                <tr><td>qsPath </td> <td>@qsPath</td> </tr>
+                <tr><td>returnUrl </td> <td>@returnUrl</td> </tr>
+            </table>
+        </div>
+    </p>
+
+    <p>
+        Model variable: <br />
+        <div style="border: 1px solid #D0D0D0">
+            <table border="0" cellpadding="10" cellspacing="4" id="tablecell">
+                <tr>
+                    <th>Name</th>
+                    <th>Value</th>
+                </tr>
+
+                <tr><td>Request </td> <td>@Model.Request</td> </tr>
+                <tr><td>Request.Path </td> <td>@Model.Request.Path</td> </tr>
+                <tr><td>Request.PathBase </td> <td>@Model.Request.PathBase</td> </tr>
+                <tr><td>HttpContext </td> <td>@Model.HttpContext</td> </tr>
+                <tr><td>ModelState </td> <td>@Model.ModelState</td> </tr>
+                <tr><td>MetadataProvider </td> <td>@Model.MetadataProvider</td> </tr>
+                <tr><td>PageContext </td> <td>@Model.PageContext</td> </tr>
+                <tr><td>RouteData </td> <td>@Model.RouteData</td> </tr>
+                <tr><td>Url </td> <td>@Model.Url</td> </tr>
+                <tr><td>User.Identity </td> <td>@Model.User.Identity</td> </tr>
+
+            </table>
+        </div>
+    </p>
+
+    <p>
+        Actual DateTime: @DateTime.Now
+    </p>
+
+</div>
+
+

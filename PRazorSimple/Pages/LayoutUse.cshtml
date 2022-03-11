@@ -1,0 +1,44 @@
+﻿@page
+@model PRazorSimple.Pages.LayoutUseModel
+@{
+    ViewData["Title"] = "Layout usage";
+    Layout = "_LayoutRazor.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    In order for a file (e.g. index.cshtml) to open in the pattern format (_Layout.cshtml),<br />
+    it is enough to declare the following expression in the code (index.cshtml):
+</p>
+
+<code style=" margin:8px;">
+    @@{
+    Layout = "_Layout.cshtml";
+    }
+</code>
+<p><img src="~/Images/index1.jpg" border="0"></p>
+
+<p>
+    In this: Layout is a member of class: RazorPageBase (RazorPageBase.Layout).
+</p>
+
+<p>
+    Then linking the file (index) will open it in the web browser with the "halo"<br />
+    of the layout from _Layout.cshtml.
+</p>
+
+<p>
+    On the other hand, in the _Layout.cshtml file, the place of insertion (injection)<br />
+    of the index.cshtml page is defined as follows:
+</p>
+<code style="margin:8px;">
+    @@RenderBody()
+</code>
+<p><img src="~/Images/layout1.jpg" border="0"></p>
+
+<p>
+    This way you can use multiple layouts. <br />
+    This is how the layouts on the current website work
+</p>
+
